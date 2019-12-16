@@ -1,0 +1,84 @@
+@layout('layouts.app')
+ 
+@section('content')
+<!-- Page Header -->
+<header class="masthead" style="background-image: linear-gradient(to top right, #C1C8E4, #5680E9, #84CEEB, #C1C8E4, #8860D0)">
+  <section id="header">
+    <div class="inner">
+      <!-- <div class="overlay"></div> -->
+       <!-- <div class="container"> -->
+          <!-- <div class="row"> -->
+           <div class="col-lg-8 col-md-8 mx-auto"> 
+              <!-- <div class="site-heading"> -->
+                <h1>Create<strong> Post</strong><br></h1>
+                <h2>Click the button below to begin writing your post!</h2>
+                <ul class="actions special">
+                  <li><a href="#/prompt" class="button scrolly">New Post</a></li>
+                </ul>
+                <ul class="actions special">
+                    <li><a href="/" class="button scrolly">Return Home</a></li>
+                  </ul>
+            </div> 
+    </div>
+  </section>
+
+</header>
+
+
+ 
+<div id="/prompt">
+<div class="container">
+    <h4><br></h4>
+    <header class="major2">
+        <h4 align="center">What's on your mind?</h4> 
+      </header>
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <!-- form for uploading image files -->
+      <form action="/posts/store" method="POST" encType="multipart/form-data">
+
+        <!--add username prompt -->
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Username</label>
+              <input type="text" name="username" placeholder="Name" class="form-control">
+            </div>
+          </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Title</label>
+            <input type="text" name="title" placeholder="Title" class="form-control">
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Description</label>
+            <input type="text" name="description" placeholder="Description" class="form-control">
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Content</label>
+            <textarea name="content" placeholder="What's on your mind..." cols="30" rows="10" class="form-control"></textarea>
+          </div>
+        </div>
+
+        <!--more file uploading code -->
+        <div class="form-group mt-3">
+            <input type="file" name="image" class="form-control-file">
+          </div>
+
+        <div class="form-group my-4 text-center">
+            <div class="clearfix">
+              <button class="btn btn-primary float-right">Create Post</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+@endsection

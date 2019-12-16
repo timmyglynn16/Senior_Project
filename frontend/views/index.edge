@@ -1,0 +1,162 @@
+@layout('layouts.app')
+
+ 
+@section('content')
+<!-- Page Header -->
+
+		<!-- Header -->
+
+
+<div id="/">
+<body class="is-preload">
+  <header class="masthead" style="background-image: linear-gradient(to top right, #C1C8E4, #5680E9, #84CEEB, #C1C8E4, #8860D0)">
+
+    <section id="header">
+      <div class="inner">
+        <!-- <div class="overlay"></div> -->
+         <!-- <div class="container"> -->
+            <!-- <div class="row"> -->
+             <div class="col-lg-8 col-md-8 mx-auto"> 
+                <!-- <div class="site-heading"> -->
+                  <h1>MEP <strong>Social</strong><br></h1>
+                  <h2>The platform for a better mental, emotional, and physical well-being</h2>
+                  <ul class="actions special">
+                    <li><a href="/posts/new" class="button scrolly">New Post</a></li>
+                    <li><a href="#/about" class="button scrolly">About MEP</a></li>
+                    <li><a href="#/posts" class="button scrolly">See Blog</a></li>
+                  </ul>
+                  <ul class="actions special">
+                    <li><a href="/" class="button scrolly">Contact Us</a></li>
+                  </ul>
+                  <!--<ul class="actions special" align:left >
+                    <li> <a href="/posts/new" class="button scrolly" >Login</a></li>
+                    <li><a href="#four" class="button scrolly">Register</a></li>
+                  </ul> -->
+              </div> 
+      </div>
+    </section>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+  		<!--About MEP-->
+  <div id="/about" class="main style2">
+				<div class="container">
+					<div class="row gtr-150">
+						<div class="col-6 col-12-medium">
+							<header class="major">
+								<h4>About Us</h4>
+              </header>
+              
+              <p>Hello, my name is Kevin Walls and I am the founder of MEP Social. 
+                  The reason I started MEP Social was to give people a platform to socialize about their mind, body, and heart. 
+                  I believe that prescription drugs to fix people and their mental and physical issues is 
+                  a huge epidemic in our world and it has to change. I want this to be a source for people to 
+                  use to help themselves and others. <br>	
+              </p>
+							<p> Alongside my buddies Timmy Glynn, Patrick DeCaro, and Andrew 
+                Bartholomew, we’ve decided to build on this idea and MEP was the result! We all became friends around 
+                3 years ago living in Pittsburgh, PA together. Over the years we have become more of a family. 
+                We’ve become more of family, because we hold the same values in life. We look at life as a gift, one we 
+                can not buy and one we may never get again. We value our overall health! We focus on our Mental, Emotional, 
+                and Physical health because one without another is like a shoe without laces. We can only run so long without 
+                one of these key health factors before we run into a wall, just like you can only run so far before your shoe falls off.  
+                We constantly workout and create workout ideas with each other, follow a healthy diet, meditate, read, and talk about 
+                our feelings. All of which is equally important as the other because it keeps us all balanced and keeps us in the driver seat 
+                of our own lives.  We don’t always do this together but us as a whole we are always there motivating each other and pushing each other 
+                to be the best selves we can be. Which is how we together, came up with the idea MEP Social. <br>	
+							</p>
+            </div>
+
+						<div class="col-6 col-12-medium imp-medium">
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <span class="image fit"><img src="/img/pitt1.jpg" alt="" /></span>
+              <br>
+              <br>
+              <span class="image fit"><img src="/img/pitt2.jpg" alt="" /></span>
+            </div>
+
+						<div class="col-6 col-12-medium imp-medium">
+              <br>
+              <br>
+							<span class="image fit"><img src="/img/kevMEP.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-medium">
+							<p>Our vision is to give people a socializing platform built around wellness. Our business focus point is mental, emotional, and 
+                physical wellness. Our social media page is going to be able to let people share and post about the importance of all-around 
+                wellness. Not just to help themselves but to help others and motivate each other to live a happy and healthy life. We created 
+                this platform to give people the first step they need into the rest of their life. During the summer we all went sky diving for 
+                the first time. The reason we decided to go up 13,000 ft in the air and jump out of a perfectly good airplane was because it scared 
+                the shit out of us. We had the option to take a leap of faith, not knowing exactly what the outcome would be or staying seated and 
+                never knowing what we could have experienced. Well, we all jumped, and <br>	
+							</p>
+						</div>
+
+					<ul class="actions special">
+						<li><a href="#/posts" class="button scrolly">See What People Are Saying...</a></li>
+
+          </ul> 
+
+
+					</div>
+				</div>
+
+  </div>
+  
+  <div id="/posts">
+    <!-- Main Content -->
+    <div class="inner" class="main style2">
+     <div class="container">
+       <h4><br></h4>
+        <header class="major2">
+            <h4 align="center">Blog</h4> 
+          </header>
+       <div class="row" >
+         <div class="col-lg-8 col-md-10 mx-auto column-reverse">        
+           @each(post in posts)
+             <div class="post-preview">
+               <a href="/post/{{ post._id }}">
+                 <h3 class="post-title">
+                   {{ post.title }}
+                 </h3>     
+               </a>
+                 <p class="post-meta">Posted by
+                     <a href="#">{{ post.username }}</a>
+                     on {{ post.createdAt.toDateString() }}
+                 </p>
+             </div>
+            <hr>
+           @endeach
+  
+           <!-- Pager -->
+         </div>
+       </div>
+     </div>
+    </div>
+    
+    <div class="inner" class="main style2">
+        <div class="container">
+            <h4><br></h4>
+            <div class="row" >
+                <div class="col-lg-8 col-md-10 mx-auto ">
+                  <div class="clearfix">
+                      <a class="btn btn-primary float-left" href="#/">Return Home &#x21E7;</a> 
+                      <a class="btn btn-primary float-right" href="#/posts">Scroll To Top &#x21E7;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+  
+  <hr>
+</body>
+@endsection
